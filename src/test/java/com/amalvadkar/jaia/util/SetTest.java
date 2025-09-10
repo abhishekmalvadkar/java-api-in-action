@@ -18,4 +18,12 @@ public class SetTest {
         patientIds.add(1L);
         assertThat(patientIds).hasSize(3);
     }
+
+    @Test
+    void should_not_take_duplicate_long_type_of_values_when_adding_in_bulk() {
+        Set<Long> patientIdsWhoAreReadyToDischarge = new HashSet<>(Set.of(1L,2L,3L));
+        Set<Long> patientIdsWhoParticipatedInGame = new HashSet<>(Set.of(1L,4L,3L));
+        patientIdsWhoAreReadyToDischarge.addAll(patientIdsWhoParticipatedInGame);
+        assertThat(patientIdsWhoAreReadyToDischarge).hasSize(4);
+    }
 }
