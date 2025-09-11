@@ -32,6 +32,7 @@ public class SetTest {
     }
 
     @Test
+    @SetInterface(method = add)
     void should_take_only_one_null_if_trying_to_multiple_null_values_in_set_because_set_cannot_have_duplicate_values() {
         Set<Long> patientIds = new HashSet<>();
         patientIds.add(1L);
