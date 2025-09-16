@@ -41,4 +41,19 @@ public class TextBlockTest {
                 "   XYZ Team\n");
     }
 
+    @Test
+    void should_not_create_new_empty_line_at_the_end() {
+        String emailBody = """
+                Hi abc,
+                
+                Thank you for registration.
+                
+                Thanks,
+                XYZ Team""";
+        assertThat(emailBody).isEqualTo("Hi abc,\n\n" +
+                "Thank you for registration.\n\n" +
+                "Thanks,\n" +
+                "XYZ Team");
+    }
+
 }
