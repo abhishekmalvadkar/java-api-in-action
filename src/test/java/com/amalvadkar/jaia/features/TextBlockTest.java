@@ -25,4 +25,20 @@ public class TextBlockTest {
                 "XYZ Team\n");
     }
 
+    @Test
+    void should_take_leading_space_from_the_position_of_ending_triple_double_quotes() {
+        String emailBody = """
+                   Hi abc,
+                
+                Thank you for registration.
+                
+                 Thanks,
+                   XYZ Team
+                """;
+        assertThat(emailBody).isEqualTo("   Hi abc,\n\n" +
+                "Thank you for registration.\n\n" +
+                " Thanks,\n" +
+                "   XYZ Team\n");
+    }
+
 }
