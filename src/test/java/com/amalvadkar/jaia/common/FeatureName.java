@@ -1,5 +1,5 @@
 package com.amalvadkar.jaia.common;
 
 public enum FeatureName {
-    textBlock
+    TEXT_BLOCK
 }

@@ -3,10 +3,11 @@ package com.amalvadkar.jaia.features;
 import com.amalvadkar.jaia.common.Feature;
 import org.junit.jupiter.api.Test;
 
-import static com.amalvadkar.jaia.common.FeatureName.textBlock;
+import static com.amalvadkar.jaia.common.FeatureName.TEXT_BLOCK;
+import static com.amalvadkar.jaia.common.Version.JDK_13;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature(name = textBlock)
+@Feature(name = TEXT_BLOCK, version = JDK_13)
 public class TextBlockTest {
 
     @Test

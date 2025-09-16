@@ -11,4 +11,5 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface Feature {
     FeatureName name();
+    Version version();
 }
