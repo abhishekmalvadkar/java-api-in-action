@@ -56,4 +56,20 @@ public class TextBlockTest {
                 "XYZ Team");
     }
 
+    @Test
+    void should_take_trailing_custom_spaces_as_per_instructed_please_note_backslash_s_itself_a_space_so_count_that_as_well_along_with_your_normal_spaces() {
+        String emailBody = """
+                Hi abc,  \s
+                
+                Thank you for registration.
+                
+                Thanks,\s
+                XYZ Team  \s
+                """;
+        assertThat(emailBody).isEqualTo("Hi abc,   \n\n" +
+                "Thank you for registration.\n\n" +
+                "Thanks, \n" +
+                "XYZ Team   \n");
+    }
+
 }
