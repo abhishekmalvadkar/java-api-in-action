@@ -21,4 +21,15 @@ public class SwitchExpressionTest {
         assertThat(result).isEqualTo(45);
     }
 
+    @Test
+    void should_switch_act_as_expression_instead_of_statement_so_we_will_use_early_returns_so_no_need_to_worry_about_break_which_is_possible_in_switch_expression() {
+        int input = 1;
+        int result = switch (input){
+            case 1,2 -> 10;
+            case 3   -> 20;
+            default  -> 45;
+        };
+        assertThat(result).isEqualTo(10);
+    }
+
 }
