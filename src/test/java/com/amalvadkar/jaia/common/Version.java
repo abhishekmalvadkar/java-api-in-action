@@ -1,5 +1,5 @@
 package com.amalvadkar.jaia.common;
 
 public enum Version {
-    JDK_13
+    JDK_15
 }

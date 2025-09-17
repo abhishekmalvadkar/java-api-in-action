@@ -4,10 +4,10 @@ import com.amalvadkar.jaia.common.Feature;
 import org.junit.jupiter.api.Test;
 
 import static com.amalvadkar.jaia.common.FeatureName.TEXT_BLOCK;
-import static com.amalvadkar.jaia.common.Version.JDK_13;
+import static com.amalvadkar.jaia.common.Version.JDK_15;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Feature(name = TEXT_BLOCK, version = JDK_13)
+@Feature(name = TEXT_BLOCK, version = JDK_15)
 public class TextBlockTest {
 
     @Test
