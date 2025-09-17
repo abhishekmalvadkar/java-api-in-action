@@ -1,5 +1,6 @@
 package com.amalvadkar.jaia.util;
 
+import com.amalvadkar.jaia.common.AbstractApiUT;
 import com.amalvadkar.jaia.common.SetInterface;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,7 @@ import static com.amalvadkar.jaia.common.SetMethod.add;
 import static com.amalvadkar.jaia.common.SetMethod.addAll;
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class SetTest {
+public class SetTest extends AbstractApiUT {
     @Test
     @SetInterface(method = add)
     void should_not_take_duplicate_long_type_of_values_when_adding_one_by_one() {

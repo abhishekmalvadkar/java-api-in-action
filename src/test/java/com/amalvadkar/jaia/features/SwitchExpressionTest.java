@@ -1,5 +1,6 @@
 package com.amalvadkar.jaia.features;
 
+import com.amalvadkar.jaia.common.AbstractFeatureUT;
 import com.amalvadkar.jaia.common.Feature;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ import static com.amalvadkar.jaia.common.Version.JDK_14;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature(name = SWITCH_EXPRESSION, version = JDK_14)
-public class SwitchExpressionTest {
+public class SwitchExpressionTest extends AbstractFeatureUT {
 
     @Test
     void should_give_wrong_output_as_bug_if_we_use_traditional_switch_statement_without_break() {

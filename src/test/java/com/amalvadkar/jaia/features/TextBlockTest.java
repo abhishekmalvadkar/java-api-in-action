@@ -1,5 +1,6 @@
 package com.amalvadkar.jaia.features;
 
+import com.amalvadkar.jaia.common.AbstractFeatureUT;
 import com.amalvadkar.jaia.common.Feature;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ import static com.amalvadkar.jaia.common.Version.JDK_15;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature(name = TEXT_BLOCK, version = JDK_15)
-public class TextBlockTest {
+public class TextBlockTest extends AbstractFeatureUT {
 
     @Test
     void should_create_email_body_with_multi_line_string_content() {
