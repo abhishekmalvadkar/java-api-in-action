@@ -1,9 +1,13 @@
 package com.amalvadkar.jaia.features;
 
+import com.amalvadkar.jaia.common.Feature;
 import org.junit.jupiter.api.Test;
 
+import static com.amalvadkar.jaia.common.FeatureName.SWITCH_EXPRESSION;
+import static com.amalvadkar.jaia.common.Version.JDK_14;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Feature(name = SWITCH_EXPRESSION, version = JDK_14)
 public class SwitchExpressionTest {
 
     @Test
