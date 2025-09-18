@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PatternMatchingWithInstanceOfTest extends AbstractFeatureUT {
+public class PatternMatchingForInstanceOfTest extends AbstractFeatureUT {
 
     @Test
     void should_represent_the_explicit_type_casting_problem_from_traditional_way_of_pattern_matching_with_instance_of_operator() {
