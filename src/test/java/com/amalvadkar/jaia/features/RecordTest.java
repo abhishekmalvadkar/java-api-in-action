@@ -25,6 +25,13 @@ public class RecordTest {
         assertThat(uniqueXyzPatients).hasSize(1);
     }
 
+    @Test
+    void should_record_provide_getter_methods_without_traditional_get_prefix_and_we_will_call_them_accessors_instead_of_getter() {
+        Patient xyzPatient = new Patient(1L, "XYZ");
+        assertThat(xyzPatient.id()).isEqualTo(1);
+        assertThat(xyzPatient.name()).isEqualTo("XYZ");
+    }
+
 }
 
 record Patient(Long id, String name){}
