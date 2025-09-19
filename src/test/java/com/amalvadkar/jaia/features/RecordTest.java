@@ -2,6 +2,7 @@ package com.amalvadkar.jaia.features;
 
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Constructor;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,6 +31,15 @@ public class RecordTest {
         Patient xyzPatient = new Patient(1L, "XYZ");
         assertThat(xyzPatient.id()).isEqualTo(1);
         assertThat(xyzPatient.name()).isEqualTo("XYZ");
+    }
+
+    @Test
+    void should_record_provide_canonical_constructor_means_all_argument_constructor() throws NoSuchMethodException {
+        Patient xyzPatient = new Patient(1L, "XYZ");
+        Constructor<?>[] declaredConstructors = xyzPatient.getClass().getDeclaredConstructors();
+        assertThat(declaredConstructors).hasSize(1);
+        assertThat(declaredConstructors[0].getParameterCount()).isEqualTo(2);
+        assertThat(declaredConstructors[0].getParameterTypes()).containsOnly(Long.class, String.class);
     }
 
 }
