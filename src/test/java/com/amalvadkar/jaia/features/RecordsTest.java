@@ -1,5 +1,6 @@
 package com.amalvadkar.jaia.features;
 
+import com.amalvadkar.jaia.common.Feature;
 import org.junit.jupiter.api.Test;
 import org.springframework.util.StringUtils;
 
@@ -7,10 +8,13 @@ import java.lang.reflect.Constructor;
 import java.util.HashSet;
 import java.util.Set;
 
+import static com.amalvadkar.jaia.common.FeatureName.RECORDS;
+import static com.amalvadkar.jaia.common.Version.JDK_16;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-public class RecordTest {
+@Feature(name = RECORDS, version = JDK_16)
+public class RecordsTest {
 
     @Test
     void should_give_to_string_method_automatically_by_record() {
