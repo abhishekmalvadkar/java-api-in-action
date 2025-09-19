@@ -1,6 +1,7 @@
 package com.amalvadkar.jaia.features;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Constructor;
 import java.util.HashSet;
@@ -50,6 +51,12 @@ public class RecordTest {
                 .hasMessage("patient id should be greater then zro");
     }
 
+    @Test
+    void should_use_compact_constructor_for_transformation_of_incoming_constructor_parameter() {
+        Patient xyzAbcPatient = new Patient(1L, "xyz abc");
+        assertThat(xyzAbcPatient.name()).isEqualTo("Xyz abc");
+    }
+
 }
 
 record Patient(Long id, String name){
@@ -57,5 +64,6 @@ record Patient(Long id, String name){
         if (id == 0) {
             throw new RuntimeException("patient id should be greater then zro");
         }
+        name = StringUtils.capitalize(name);
     }
 }
