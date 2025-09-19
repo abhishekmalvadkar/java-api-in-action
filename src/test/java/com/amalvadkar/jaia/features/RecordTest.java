@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class RecordTest {
 
@@ -42,6 +43,19 @@ public class RecordTest {
         assertThat(declaredConstructors[0].getParameterTypes()).containsOnly(Long.class, String.class);
     }
 
+    @Test
+    void should_record_use_compact_constructor_for_any_kind_of_pre_validation_or_transaformation_on_incoming_contrsuctor_parameter_you_cannot_use_instance_variables_in_compact_constructor_only_parameters() {
+        assertThatThrownBy(() -> new Patient(0L, "XYZ"))
+                .isInstanceOf(RuntimeException.class)
+                .hasMessage("patient id should be greater then zro");
+    }
+
 }
 
-record Patient(Long id, String name){}
+record Patient(Long id, String name){
+    Patient {
+        if (id == 0) {
+            throw new RuntimeException("patient id should be greater then zro");
+        }
+    }
+}
