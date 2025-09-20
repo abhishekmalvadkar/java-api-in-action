@@ -29,5 +29,14 @@ public class LocalVariableTypeInferenceTest extends AbstractFeatureUT {
         return new ArrayList<>();
     }
 
+    @Test
+    void should_take_care_about_generic_type_when_using_var_with_generic_types_list_list() {
+        var names = new ArrayList<>();
+        ArrayList<Object> anotherNames = names;
+
+        var tickets = new ArrayList<Long>();
+        ArrayList<Long> anotherTickets = tickets;
+    }
+
 
 }
