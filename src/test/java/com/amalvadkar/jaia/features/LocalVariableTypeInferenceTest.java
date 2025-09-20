@@ -9,6 +9,7 @@ import java.util.List;
 
 import static com.amalvadkar.jaia.common.FeatureName.LOCAL_VARIABLE_TYPE_INFERENCE;
 import static com.amalvadkar.jaia.common.Version.JDK_10;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Feature(name = LOCAL_VARIABLE_TYPE_INFERENCE, version = JDK_10)
 public class LocalVariableTypeInferenceTest extends AbstractFeatureUT {
@@ -36,6 +37,12 @@ public class LocalVariableTypeInferenceTest extends AbstractFeatureUT {
 
         var tickets = new ArrayList<Long>();
         ArrayList<Long> anotherTickets = tickets;
+    }
+
+    @Test
+    void should_follow_this_as_developer_if_you_want_to_see_which_type_var_has_so_press_ctrl_shift_i_quick_definition() {
+        boolean needToReadThisTestMethodName = true;
+        assertThat(needToReadThisTestMethodName).isTrue();
     }
 
 
