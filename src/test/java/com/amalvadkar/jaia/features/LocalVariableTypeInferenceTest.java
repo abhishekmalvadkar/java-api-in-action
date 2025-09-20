@@ -40,7 +40,7 @@ public class LocalVariableTypeInferenceTest extends AbstractFeatureUT {
     }
 
     @Test
-    void should_follow_this_as_developer_if_you_want_to_see_which_type_var_has_so_press_ctrl_shift_i_quick_definition() {
+    void should_follow_this_as_developer_if_you_want_to_see_which_type_var_has_so_press_ctrl_shift_i_quick_definition_on_var_of_your_variable() {
         boolean needToReadThisTestMethodName = true;
         assertThat(needToReadThisTestMethodName).isTrue();
     }
