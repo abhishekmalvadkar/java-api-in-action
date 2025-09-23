@@ -2,6 +2,7 @@ package com.amalvadkar.jaia.common;
 
 public enum FeatureName {
     LOCAL_VARIABLE_TYPE_INFERENCE,
+    HELPFUL_NULL_POINTER_EXCEPTION,
     TEXT_BLOCK,
     SWITCH_EXPRESSION,
     PATTERN_MATCHING_FOR_INSTANCE_OF,
