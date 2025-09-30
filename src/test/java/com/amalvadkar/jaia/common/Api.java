@@ -9,6 +9,6 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(METHOD)
 @Retention(RUNTIME)
 public @interface Api {
-    Class<?> apiClass();
-    String apiMethod();
+    Class<?> type();
+    String method();
 }

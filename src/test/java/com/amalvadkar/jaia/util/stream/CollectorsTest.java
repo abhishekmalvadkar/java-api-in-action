@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CollectorsTest extends AbstractApiUT {
 
     @Test
-    @Api(apiClass = Collectors.class, apiMethod = toSet)
+    @Api(type = Collectors.class, method = toSet)
     void should_not_take_duplicate_Long_type_of_values_when_collecting_elements_as_set() {
         List<Long> patientIds = List.of(1L, 2L, 1L);
 
