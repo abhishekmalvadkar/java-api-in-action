@@ -1,7 +1,7 @@
 package com.amalvadkar.jaia.util;
 
 import com.amalvadkar.jaia.common.AbstractApiUT;
-import com.amalvadkar.jaia.common.SetInterface;
+import com.amalvadkar.jaia.common.Api;
 import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 
@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SetTest extends AbstractApiUT {
     @Test
-    @SetInterface(method = add)
+    @Api(apiClass = Set.class, apiMethod = add)
     void should_not_take_duplicate_long_type_of_values_when_adding_one_by_one() {
         Set<Long> patientIds = new HashSet<>();
         patientIds.add(1L);
@@ -25,7 +25,7 @@ public class SetTest extends AbstractApiUT {
     }
 
     @Test
-    @SetInterface(method = addAll)
+    @Api(apiClass = Set.class, apiMethod = addAll)
     void should_not_take_duplicate_long_type_of_values_when_adding_in_bulk() {
         Set<Long> patientIdsWhoAreReadyToDischarge = new HashSet<>(Set.of(1L, 2L, 3L));
         Set<Long> patientIdsWhoParticipatedInGame = new HashSet<>(Set.of(1L, 4L, 3L));
@@ -34,7 +34,7 @@ public class SetTest extends AbstractApiUT {
     }
 
     @Test
-    @SetInterface(method = add)
+    @Api(apiClass = Set.class, apiMethod = add)
     void should_take_only_one_null_if_trying_to_multiple_null_values_in_set_because_set_cannot_have_duplicate_values() {
         Set<Long> patientIds = new HashSet<>();
         patientIds.add(1L);
@@ -46,7 +46,7 @@ public class SetTest extends AbstractApiUT {
     }
 
     @Test
-    @SetInterface(method = add)
+    @Api(apiClass = Set.class, apiMethod = add)
     void should_not_take_duplicate_object_type_of_values_when_adding_one_by_one_if_override_equals_and_hashcode_based_on_content() {
         Patient abcPatient = Patient.of(1L, "abc");
         Patient cdePatient = Patient.of(2L, "cde");
@@ -61,7 +61,7 @@ public class SetTest extends AbstractApiUT {
     }
 
     @Test
-    @SetInterface(method = add)
+    @Api(apiClass = Set.class, apiMethod = add)
     void should_take_duplicate_object_type_of_values_when_adding_one_by_one_if_does_not_override_equals_and_hashcode_based_on_content() {
         Hospital abcHospital = Hospital.of(1L, "abc");
         Hospital cdeHospital = Hospital.of(2L, "cde");

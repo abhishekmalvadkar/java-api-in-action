@@ -8,6 +8,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target(METHOD)
 @Retention(RUNTIME)
-public @interface SetInterface {
-    SetMethod method();
+public @interface Api {
+    Class<?> apiClass();
+    String apiMethod();
 }
