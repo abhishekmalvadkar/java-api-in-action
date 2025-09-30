@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.amalvadkar.jaia.common.CollectorsMethod.toSet;
+import static com.amalvadkar.jaia.common.methods.CollectorsMethod.toSet;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CollectorsTest extends AbstractApiUT {

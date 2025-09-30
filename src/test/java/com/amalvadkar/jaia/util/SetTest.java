@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.amalvadkar.jaia.common.SetMethod.add;
-import static com.amalvadkar.jaia.common.SetMethod.addAll;
+import static com.amalvadkar.jaia.common.methods.SetMethod.add;
+import static com.amalvadkar.jaia.common.methods.SetMethod.addAll;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class SetTest extends AbstractApiUT {

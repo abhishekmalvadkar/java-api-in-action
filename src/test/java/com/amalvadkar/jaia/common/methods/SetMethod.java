@@ -1,4 +1,4 @@
-package com.amalvadkar.jaia.common;
+package com.amalvadkar.jaia.common.methods;
 
 public interface SetMethod {
     String add = "add";
