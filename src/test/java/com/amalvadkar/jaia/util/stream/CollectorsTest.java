@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static com.amalvadkar.jaia.common.methods.CollectorsMethod.joining;
 import static com.amalvadkar.jaia.common.methods.CollectorsMethod.toSet;
 import static com.amalvadkar.jaia.common.methods.CollectorsMethod.toUnmodifiableList;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -39,6 +40,17 @@ public class CollectorsTest extends AbstractApiUT {
         assertThat(immutablePatientIds).hasSize(4);
         assertThatThrownBy(() -> immutablePatientIds.add(5L))
                 .isInstanceOf(UnsupportedOperationException.class);
+    }
+
+    @Test
+    @Api(type = Collectors.class, method = joining)
+    void should_join_all_email_ids_from_list_without_any_separator_and_return_as_string() {
+        List<String> emailsIds = List.of("abc@xyz.com", "def@xyz.com", "ghi@xyz.com");
+
+        String joinedEmaileIdsAsString = emailsIds.stream()
+                .collect(Collectors.joining());
+
+        assertThat(joinedEmaileIdsAsString).isEqualTo("abc@xyz.comdef@xyz.comghi@xyz.com");
     }
 
 }
