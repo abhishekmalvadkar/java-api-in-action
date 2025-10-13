@@ -8,8 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import static com.amalvadkar.jaia.common.methods.ObjectsMethod.equals;
 import static com.amalvadkar.jaia.common.methods.ObjectsMethod.nonNull;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class ObjectsTest extends AbstractApiUT {
 
@@ -32,5 +34,19 @@ public class ObjectsTest extends AbstractApiUT {
                 .toList();
 
         assertThat(nonNullPatientIds).hasSize(4);
+    }
+
+    @Test
+    @Api(type = Objects.class, method = equals)
+    void normal_equals_method_can_throw_NPE_if_one_of_is_null_but_objects_equals_will_return_false() {
+        Long firstPatientId = null;
+        Long anotherPatientId = 1L;
+
+        assertThatThrownBy(() -> firstPatientId.equals(anotherPatientId))
+                .isInstanceOf(NullPointerException.class)
+                .hasMessage("Cannot invoke \"java.lang.Long.equals(Object)\" because \"firstPatientId\" is null");
+
+        assertThat(Objects.equals(firstPatientId, anotherPatientId)).isFalse();
+        assertThat(Objects.equals(anotherPatientId, firstPatientId)).isFalse();
     }
 }
