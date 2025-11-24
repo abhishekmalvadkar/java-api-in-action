@@ -4,5 +4,6 @@ public enum Version {
     JDK_10,
     JDK_14,
     JDK_15,
-    JDK_16
+    JDK_16,
+    JDK_21
 }
