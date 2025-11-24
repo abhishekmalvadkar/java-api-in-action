@@ -1,8 +1,7 @@
-package com.amalvadkar.jaia.util;
+package com.amalvadkar.jaia.util.set;
 
 import com.amalvadkar.jaia.common.AbstractApiUT;
 import com.amalvadkar.jaia.common.Api;
-import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashSet;
@@ -77,18 +76,4 @@ public class SetTest extends AbstractApiUT {
     }
 
 }
-record Patient(Long id, String name){
-    public static Patient of(Long id, String name){
-        return new Patient(id, name);
-    }
-}
 
-@RequiredArgsConstructor
-class Hospital{
-    private final Long id;
-    private final String name;
-    
-    public static Hospital of(Long id, String name){
-        return new Hospital(id,name);
-    }
-}
