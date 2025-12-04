@@ -9,6 +9,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target(METHOD)
 @Retention(RUNTIME)
 public @interface Api {
-    Class<?> type();
-    String method();
+    Class<?> type() default Object.class;
+    String method() default "";
+    String constructor() default "";
 }

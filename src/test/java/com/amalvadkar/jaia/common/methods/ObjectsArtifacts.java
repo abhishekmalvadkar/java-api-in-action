@@ -1,6 +1,7 @@
 package com.amalvadkar.jaia.common.methods;
 
-public interface ObjectsMethod {
+public interface ObjectsArtifacts {
     String nonNull = "nonNull";
     String equals = "equals";
+    String privateConstructor = "privateConstructor";
 }

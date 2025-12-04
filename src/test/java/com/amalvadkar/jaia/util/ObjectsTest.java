@@ -10,8 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import static com.amalvadkar.jaia.common.methods.ObjectsMethod.equals;
-import static com.amalvadkar.jaia.common.methods.ObjectsMethod.nonNull;
+import static com.amalvadkar.jaia.common.methods.ObjectsArtifacts.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -53,6 +52,7 @@ public class ObjectsTest extends AbstractApiUT {
     }
 
     @Test
+    @Api(type = Objects.class, constructor = privateConstructor)
     void should_not_be_able_to_access_Objects_constructor_because_module_does_not_allowed_it() throws NoSuchMethodException {
         Class<Objects> objectsClass = Objects.class;
         Constructor<Objects> objectsClassNoArgsConstructor = objectsClass.getDeclaredConstructor();
