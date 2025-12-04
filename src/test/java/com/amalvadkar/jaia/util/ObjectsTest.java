@@ -4,6 +4,8 @@ import com.amalvadkar.jaia.common.AbstractApiUT;
 import com.amalvadkar.jaia.common.Api;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InaccessibleObjectException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -48,5 +50,14 @@ public class ObjectsTest extends AbstractApiUT {
 
         assertThat(Objects.equals(firstPatientId, anotherPatientId)).isFalse();
         assertThat(Objects.equals(anotherPatientId, firstPatientId)).isFalse();
+    }
+
+    @Test
+    void should_not_be_able_to_access_Objects_constructor_because_module_does_not_allowed_it() throws NoSuchMethodException {
+        Class<Objects> objectsClass = Objects.class;
+        Constructor<Objects> objectsClassNoArgsConstructor = objectsClass.getDeclaredConstructor();
+        assertThatThrownBy(() ->   objectsClassNoArgsConstructor.setAccessible(true))
+                .isInstanceOf(InaccessibleObjectException.class)
+                .hasMessage("Unable to make private java.util.Objects() accessible: module java.base does not \"opens java.util\" to unnamed module @8efb846");
     }
 }
