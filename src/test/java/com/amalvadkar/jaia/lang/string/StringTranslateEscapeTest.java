@@ -1,10 +1,11 @@
 package com.amalvadkar.jaia.lang.string;
 
+import com.amalvadkar.jaia.common.AbstractApiUT;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class StringTranslateEscapeTest {
+public class StringTranslateEscapeTest extends AbstractApiUT {
     @Test
     void test_translate_escape() {
         assertThat("Hello\\nWorld".translateEscapes()).isEqualTo("""
