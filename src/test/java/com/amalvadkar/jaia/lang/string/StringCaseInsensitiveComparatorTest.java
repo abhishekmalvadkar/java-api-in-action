@@ -19,7 +19,7 @@ public class StringCaseInsensitiveComparatorTest {
 
      */
     @Test
-    void testSortFailsWithoutCaseInsensitive() {
+    void testSortWithCaseInsensitive() {
         List<String> fruits = List.of("banana", "APPLE", "cherry", "apple", "Avocado");
 
         List<String> sortedFruits = fruits.stream()
